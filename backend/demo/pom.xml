@@ -33,6 +33,13 @@
             <version>${spring-boot.version}</version>
         </dependency>
 
+        <!-- Hibernate Core (Add this to resolve org.hibernate) -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.10.Final</version> <!-- Use the latest stable version -->
+        </dependency>
+
         <!-- SQLite JDBC -->
         <dependency>
             <groupId>org.xerial</groupId>
