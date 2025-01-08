@@ -18,6 +18,17 @@
         <sqlite-jdbc.version>3.42.0.0</sqlite-jdbc.version> <!-- Latest SQLite JDBC version -->
     </properties>
 
+    <repositories>
+        <!-- Repository for Spring snapshots -->
+        <repository>
+            <id>spring-snapshots</id>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- Spring Boot Starter Web for REST APIs -->
         <dependency>
@@ -33,12 +44,13 @@
             <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- Hibernate Core (Add this to resolve org.hibernate) -->
+        <!-- Hibernate Core for ORM support -->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.6.10.Final</version> <!-- Use the latest stable version -->
-        </dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.6.10.Final</version> <!-- Stable version -->
+</dependency>
+
 
         <!-- SQLite JDBC -->
         <dependency>
