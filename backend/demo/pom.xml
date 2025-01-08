@@ -12,73 +12,58 @@
     <name>Portfolio Tracker</name>
     <description>Portfolio Tracker Application</description>
 
+    <properties>
+        <java.version>17</java.version> <!-- Ensure compatibility with your Java version -->
+        <spring-boot.version>3.1.4</spring-boot.version> <!-- Use a stable Spring Boot version -->
+        <sqlite-jdbc.version>3.42.0.0</sqlite-jdbc.version> <!-- Latest SQLite JDBC version -->
+    </properties>
+
     <dependencies>
-        <!-- Spring Web for REST API -->
+        <!-- Spring Boot Starter Web for REST APIs -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.7.4</version> <!-- specify version -->
+            <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- Spring Data JPA for database interaction -->
+        <!-- Spring Boot Starter Data JPA for database access -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.7.4</version> <!-- specify version -->
+            <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- H2 Database (replace this with Azure SQL dependency later) -->
+        <!-- SQLite JDBC -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.200</version> <!-- specify version -->
-            <scope>runtime</scope>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>${sqlite-jdbc.version}</version>
         </dependency>
 
-        <!-- Spring Boot DevTools (optional for development purposes) -->
+        <!-- Spring Boot DevTools for live reload in development -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <version>2.7.4</version> <!-- specify version -->
+            <version>${spring-boot.version}</version>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Spring Boot Test Dependencies -->
+        <!-- Spring Boot Starter Test for testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.7.4</version>
-            <scope>test</scope>
-        </dependency>
-
-		<dependency>
-    <groupId>com.microsoft.sqlserver</groupId>
-    <artifactId>mssql-jdbc</artifactId>
-    <version>11.2.0.jre8</version> <!-- Ensure to use the appropriate version -->
-</dependency>
-
-
-        <!-- JUnit Jupiter for Unit Testing -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.1</version>
+            <version>${spring-boot.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.7.4</version> <!-- specify version -->
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
