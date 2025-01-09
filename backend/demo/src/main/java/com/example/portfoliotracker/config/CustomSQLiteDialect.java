@@ -1,22 +1,36 @@
 package com.example.portfoliotracker.config;
 
-import org.hibernate.dialect.Dialect;
-import org.hibernate.dialect.identity.IdentityColumnSupport;
-import org.hibernate.dialect.identity.IdentityColumnSupportImpl;
 import org.hibernate.dialect.DatabaseVersion;
-
+import org.hibernate.dialect.Dialect;
+import org.hibernate.type.SqlTypes;
 
 public class CustomSQLiteDialect extends Dialect {
 
-    // Constructor for custom SQLite dialect (updated for Hibernate 6.0)
     public CustomSQLiteDialect() {
-        super(DatabaseVersion.make(3, 0, 0)); // Providing SQLite version (adjust if needed)
+        super(DatabaseVersion.make(3, 42)); // SQLite version 3.42.0
     }
 
     @Override
-    public IdentityColumnSupport getIdentityColumnSupport() {
-        return new IdentityColumnSupportImpl();
+    protected void initializeTypeMappings(TypeNames typeNames, DatabaseVersion databaseVersion) {
+        typeNames.put(SqlTypes.INTEGER, "integer");
+        typeNames.put(SqlTypes.VARCHAR, "text");
+        typeNames.put(SqlTypes.FLOAT, "float");
+        typeNames.put(SqlTypes.DOUBLE, "double");
+        typeNames.put(SqlTypes.BLOB, "blob");
     }
 
-    // Other custom methods can be added here as needed
+    @Override
+    public boolean supportsSequences() {
+        return false;
+    }
+
+    @Override
+    public boolean supportsLimit() {
+        return true;
+    }
+
+    @Override
+    public String getLimitString(String sql, boolean hasOffset) {
+        return sql + (hasOffset ? " limit ? offset ?" : " limit ?");
+    }
 }
