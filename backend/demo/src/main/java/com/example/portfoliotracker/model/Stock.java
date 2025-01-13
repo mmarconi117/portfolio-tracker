@@ -69,3 +69,5 @@ public class Stock {
         this.buyPrice = buyPrice;
     }
 }
+
+//will soon update
