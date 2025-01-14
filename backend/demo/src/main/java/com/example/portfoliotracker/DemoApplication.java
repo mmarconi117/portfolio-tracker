@@ -11,3 +11,7 @@ public class DemoApplication {
 	}
 
 }
+
+// File path: /Users/michaelmarconi/portfolio-tracker/backend/demo/src/main/java/com/example/portfoliotracker/service/StockService.java
+// Content:
+// package com.example.portfoliotracker.service;
