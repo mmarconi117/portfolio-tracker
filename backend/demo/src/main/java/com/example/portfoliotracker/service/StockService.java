@@ -19,7 +19,7 @@ public class StockService {
         this.stockRepository = stockRepository;
     }
 
-    // Add a new stock to the portfolio
+
     public Stock addStock(Stock stock) {
         return stockRepository.save(stock);
     }
