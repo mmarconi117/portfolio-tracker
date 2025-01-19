@@ -24,7 +24,7 @@ public class StockService {
         return stockRepository.save(stock);
     }
 
-    // Update an existing stock in the portfolio
+
     public Stock updateStock(Long id, Stock stockDetails) {
         Optional<Stock> stockOptional = stockRepository.findById(id);
         if (stockOptional.isPresent()) {
