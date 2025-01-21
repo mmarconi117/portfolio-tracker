@@ -35,7 +35,7 @@ public class StockService {
             stock.setBuyPrice(stockDetails.getBuyPrice());
             return stockRepository.save(stock);
         } else {
-            // Handle case where the stock is not found
+
             return null;
         }
     }
